@@ -21,17 +21,21 @@ Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.or
 `dotnet add package ApiRateLimiting`
 4. Add code in the program.cs file:
    - Add namespace `using ApiRateLimiting;`.
+   
    - Add `builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));`.
+  
    - Add `builder.Services.AddApiRateLimiting();`.
+   
    - Add `app.UseMiddleware<RateLimitingMiddleware>();`.
+   
 5. Update the application settings with the following configurations:
   ```json
   "IpRateLimiting": {
       "GeneralRules": [
         {
           "Endpoint": "*",
-          "Period": "2m",  // set min,h,day
-          "Limit": 2
+          "Period": "2m",  //set min for m ,hour for h,day for d
+          "Limit": 2  // set request limit
         }
       ]
     }

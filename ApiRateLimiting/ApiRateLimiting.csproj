@@ -10,8 +10,9 @@
 		<Description>ApiRateLimiting is a middleware that enforces rate limiting for APIs by controlling the number of requests a user or 
 		IP address can make within a specified time window. It helps protect your API from abuse, such as DDoS attacks or excessive traffic, ensuring fair usage and system stability.</Description>
 		<PackageTags>ApiRateLimiting</PackageTags>
-		<RepositoryUrl>https://github.com/Bibashsitoula0/DynamicFormBuilder-Package</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Bibashsitoula0/ApiRateLimiting</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>apiratelimiting.png</PackageIcon>
 	</PropertyGroup>	
 	
 
@@ -25,6 +26,18 @@
 	<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
 	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 
+  </ItemGroup>	
+	
+
+  <ItemGroup>
+    <None Include="logo\apiratelimiting.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
