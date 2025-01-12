@@ -32,8 +32,8 @@ Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.or
       "GeneralRules": [
         {
           "Endpoint": "*",
-          "Period": "2m",  // set min,h,day
-          "Limit": 2
+          "Period": "2m",  //set min for m ,hour for h,day for d
+          "Limit": 2  // set request limit
         }
       ]
     }
