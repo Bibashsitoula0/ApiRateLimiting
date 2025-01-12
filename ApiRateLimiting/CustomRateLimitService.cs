@@ -19,29 +19,25 @@ namespace ApiRateLimiting
 
         public bool IsRequestAllowed(string clientId, string endpoint)
         {
-            // Find the rate limit rule for this endpoint
+
             var rule = _rateLimitRules.FirstOrDefault(r => r.Endpoint == "*" || r.Endpoint == endpoint);
-            if (rule == null) return true; // No rate limit rule, so allow the request
+            if (rule == null) return true;
 
             var cacheKey = $"RateLimit-{clientId}-{endpoint}";
             var requestInfo = _cache.Get<RequestInfoModel>(cacheKey) ?? new RequestInfoModel();
 
-            // Remove requests older than the defined time period
             requestInfo.Requests.RemoveAll(r => r.Timestamp < DateTime.UtcNow - rule.PeriodTimeSpan);
 
-            // If the user has exceeded the limit, deny access
             if (requestInfo.Requests.Count >= rule.Limit)
             {
                 return false;
             }
 
-            // Add the current request
             requestInfo.Requests.Add(new RequestDetails
             {
                 Timestamp = DateTime.UtcNow
             });
 
-            // Update the cache with the new request info
             _cache.Set(cacheKey, requestInfo, rule.PeriodTimeSpan);
             return true;
         }

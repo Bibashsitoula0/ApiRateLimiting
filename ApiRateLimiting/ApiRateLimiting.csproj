@@ -1,30 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<PackageId>DynamicFormBuilder</PackageId>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>ApiRateLimiting</PackageId>
 		<Version>1.0.0</Version>
 		<Authors>Bibash Sitoula</Authors>
-		<Description>A dynamic form builder package for ASP.NET Core</Description>
-		<PackageTags>FormBuilder, ASP.NET Core, DynamicForms</PackageTags>
+		<Description>ApiRateLimiting is a middleware that enforces rate limiting for APIs by controlling the number of requests a user or 
+		IP address can make within a specified time window. It helps protect your API from abuse, such as DDoS attacks or excessive traffic, ensuring fair usage and system stability.</Description>
+		<PackageTags>ApiRateLimiting</PackageTags>
 		<RepositoryUrl>https://github.com/Bibashsitoula0/DynamicFormBuilder-Package</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageIcon>Screenshot 2025-01-12 124621.png</PackageIcon>
-	</PropertyGroup>
+	</PropertyGroup>	
 	
-	
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DynamicFormBuilder" Version="1.1.0" />
     <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="9.0.0" />
 	<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="5.0.0" />
+	<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 
   </ItemGroup>
 
