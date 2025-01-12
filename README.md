@@ -21,7 +21,9 @@ Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.or
 `dotnet add package ApiRateLimiting`
 4. Add code in the program.cs file:
    - Add namespace `using ApiRateLimiting;`.
+     
    - Add `builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));`.
+     
    - Add `builder.Services.AddApiRateLimiting();`.
    - Add `app.UseMiddleware<RateLimitingMiddleware>();`.
 5. Update the application settings with the following configurations:
