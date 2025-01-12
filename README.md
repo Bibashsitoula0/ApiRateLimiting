@@ -10,7 +10,7 @@ This is a simple API rate limiting middleware and service that allows you to lim
 5. Extensible: Easily extend the rate limiting logic or add custom features to fit your needs.
 
 # Installation
-To install the package, use the `dotnet add package ApiRateLimiting`.
+To install the package, use the `dotnet add package ApiRateLimiting --version 1.0.0`.
 Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.org/packages/ApiRateLimiting).
 
  ### Key Steps:
