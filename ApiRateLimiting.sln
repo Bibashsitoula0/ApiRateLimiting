@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiRateLimiting", "ApiRateLimiting\ApiRateLimiting.csproj", "{0F6A6888-44E2-4AAB-9143-AEF411C81F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApiTesting", "DemoApiTesting\DemoApiTesting.csproj", "{BEB01B12-0381-41E9-B212-0FD37DB4C070}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F6A6888-44E2-4AAB-9143-AEF411C81F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6A6888-44E2-4AAB-9143-AEF411C81F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6A6888-44E2-4AAB-9143-AEF411C81F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6A6888-44E2-4AAB-9143-AEF411C81F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEB01B12-0381-41E9-B212-0FD37DB4C070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB01B12-0381-41E9-B212-0FD37DB4C070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB01B12-0381-41E9-B212-0FD37DB4C070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB01B12-0381-41E9-B212-0FD37DB4C070}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {838C4CB1-164D-40E1-AE4D-F8A5806AB968}
+	EndGlobalSection
+EndGlobal
