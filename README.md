@@ -23,10 +23,10 @@ Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.or
    - Add namespace `using ApiRateLimiting;`.
    
    - Add
-    ```json
+     `
      builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));   
      builder.Services.AddApiRateLimiting();      
-     ```
+     `
    
    - Add `app.UseMiddleware<RateLimitingMiddleware>();`.
    
