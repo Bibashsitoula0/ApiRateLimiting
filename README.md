@@ -15,7 +15,7 @@ Alternatively, you can download it from the [NuGet Gallery](https://www.nuget.or
 
  ### Key Steps:
 
-1. Create a blank project using the ASP.NET web api.
+1. Create a blank project using the ASP.NET Web Api.
 2. Choose .NET 8.0 for the project.
 3. Install the ApiRateLimiting from NuGet packages.
 `Install-Package ApiRateLimiting -Version 1.1.0`
