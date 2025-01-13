@@ -5,14 +5,13 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>ApiRateLimiting</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<Authors>Bibash Sitoula</Authors>
-		<Description>ApiRateLimiting is a middleware that enforces rate limiting for APIs by controlling the number of requests a user or 
-		IP address can make within a specified time window. It helps protect your API from abuse, such as DDoS attacks or excessive traffic, ensuring fair usage and system stability.</Description>
+		<Description>This is a simple API rate limiting middleware and service that allows you to limit the number of requests made by users or IP addresses within a specified time period.</Description>
 		<PackageTags>ApiRateLimiting</PackageTags>
 		<RepositoryUrl>https://github.com/Bibashsitoula0/ApiRateLimiting</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageIcon>apiratelimiting.png</PackageIcon>
+		<PackageIcon>Rate_Limiting.png</PackageIcon>
 	</PropertyGroup>	
 	
 
@@ -30,7 +29,7 @@
 	
 
   <ItemGroup>
-    <None Include="logo\apiratelimiting.png">
+    <None Include="logo\Rate_Limiting.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

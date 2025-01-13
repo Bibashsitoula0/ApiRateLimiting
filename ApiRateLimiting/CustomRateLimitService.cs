@@ -16,31 +16,35 @@ namespace ApiRateLimiting
             _cache = memoryCache;
             _rateLimitRules = options.Value.GeneralRules;
         }
-
         public bool IsRequestAllowed(string clientId, string endpoint)
         {
-
-            var rule = _rateLimitRules.FirstOrDefault(r => r.Endpoint == "*" || r.Endpoint == endpoint);
-            if (rule == null) return true;
-
-            var cacheKey = $"RateLimit-{clientId}-{endpoint}";
-            var requestInfo = _cache.Get<RequestInfoModel>(cacheKey) ?? new RequestInfoModel();
-
-            requestInfo.Requests.RemoveAll(r => r.Timestamp < DateTime.UtcNow - rule.PeriodTimeSpan);
-
-            if (requestInfo.Requests.Count >= rule.Limit)
+            foreach (var rule in _rateLimitRules)
             {
-                return false;
+                if (rule.Endpoint == "*" || rule.Endpoint == endpoint)
+                {
+                    var cacheKey = $"RateLimit-{clientId}-{endpoint}";
+                    var requestInfo = _cache.Get<RequestInfoModel>(cacheKey) ?? new RequestInfoModel();
+
+                    requestInfo.Requests.RemoveAll(r => r.Timestamp < DateTime.UtcNow - rule.PeriodTimeSpan);
+                    if (requestInfo.Requests.Count >= rule.Limit)
+                    {
+                        return false;  
+                    }
+
+                    requestInfo.Requests.Add(new RequestDetails
+                    {
+                        Timestamp = DateTime.UtcNow
+                    });
+
+                    _cache.Set(cacheKey, requestInfo, rule.PeriodTimeSpan);
+                    return true;  
+                }
             }
 
-            requestInfo.Requests.Add(new RequestDetails
-            {
-                Timestamp = DateTime.UtcNow
-            });
-
-            _cache.Set(cacheKey, requestInfo, rule.PeriodTimeSpan);
+            // If no matching rule is found, allow the request by default
             return true;
         }
+
 
         public int GetRemainingRequests(string clientId, string endpoint)
         {
